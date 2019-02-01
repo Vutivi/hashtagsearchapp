@@ -10,7 +10,7 @@ class HashtagController < ApplicationController
     end
   end
 
-  def read_view
+  def view_read
     @hashtag_posts = Hashtag.all
   end
 

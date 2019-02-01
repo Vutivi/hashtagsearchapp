@@ -1,0 +1,22 @@
+<h1>Saved Hashtag posts</h1>
+<%= link_to 'Back to search', hashtag_path %>
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @hashtag_posts.each do |post| %>
+        <div>
+            <strong> <%= post.id %></strong>
+            <strong> <%= post.message %></strong>
+            <%= link_to 'delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      <% end %>
+     </tr>
+  </tbody>
+</table>

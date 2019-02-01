@@ -19,9 +19,9 @@
       <% @hashtag_posts.each do |post_id| %>
         <% post = HashtagService.get_post_with_hashtag(post_id) %>
         <div>
-            <strong> <%= post["id"] %></strong>
-            <strong> <%= post["message"] %></strong>
-            <%= link_to 'Mark as read', mark_hashtag_path(hashtag) %>
+            <strong> <%= post_id["id"] %></strong>
+            <strong> <%= post_id["message"] %></strong>
+            <%= link_to 'Mark as read', mark_hashtag_path(post) %>
         </div>
       <% end %>
      </tr>
