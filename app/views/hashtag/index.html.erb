@@ -1,0 +1,28 @@
+<h1>Instagram hashtag search app </h1>
+
+<%= form_tag(search_hashtag_path) do %>
+  <%= text_field_tag :search_term %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<h1>Hashtags</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <% @hashtags.each do |hashtag| %>
+        <% puts hashtag %>
+        <div>
+            <strong> <%= hashtag["id"] %></strong>
+            <strong> <%= hashtag["name"] %></strong>
+            <%= link_to 'Mark as read', mark_hashtag_path(hashtag) %>
+        </div>
+      <% end %>
+     </tr>
+  </tbody>
+</table>
