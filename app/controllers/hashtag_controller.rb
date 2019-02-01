@@ -4,6 +4,10 @@ class HashtagController < ApplicationController
   end
 
   def mark
+    Hashtag.tap.new do |hashtag|
+      hashtag.hashtag_id = params[:id]
+      hashtag.message    = params[:message]
+    end
   end
 
   def search
