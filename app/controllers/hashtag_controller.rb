@@ -10,6 +10,10 @@ class HashtagController < ApplicationController
     end
   end
 
+  def read_view
+    @hashtag_posts = Hashtag.all
+  end
+
   def search
     hashtag_id     = HashtagService.search_hashtag(params[:search_term])
     @hashtag_posts = HashtagService.search_hashtag_posts(hashtag_id)
