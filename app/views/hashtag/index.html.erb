@@ -15,11 +15,11 @@
 
   <tbody>
     <tr>
-      <% @hashtags.each do |hashtag| %>
-        <% puts hashtag %>
+      <% @hashtag_posts.each do |post_id| %>
+        <% post = HashtagService.get_post_with_hashtag(post_id) %>
         <div>
-            <strong> <%= hashtag["id"] %></strong>
-            <strong> <%= hashtag["name"] %></strong>
+            <strong> <%= post["id"] %></strong>
+            <strong> <%= post["message"] %></strong>
             <%= link_to 'Mark as read', mark_hashtag_path(hashtag) %>
         </div>
       <% end %>
